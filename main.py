@@ -1,33 +1,28 @@
 def main():
+    decision_of_the_next_calculation = False
+    while not decision_of_the_next_calculation:
+        number_first = int(input("Enter the number A: "))
+        number_second = int(input("Enter the number B: "))
+        operation = input("Enter a math sign")
 
-    czy_koniec = False
-    while not czy_koniec:
-        liczba_A = int(input("podaj liczbę A: "))
-        liczba_B = int(input("podaj lizbę B: "))
-        działanie = input("podaj znak działania matematycznego :")
+        if operation == "+":
+            print(number_first + number_second)
+        elif operation == "-":
+            print(number_first - number_second)
+        elif operation == "*":
+            print(number_first * number_second)
+        elif operation == "/":
+            print(number_first / number_second)
+        elif operation == "//":
+            print(number_first // number_second)
+        elif operation == "%" and number_second == 0:
+            print(number_first % number_second)
+        you_wants_next_calculate = input("If you wants next calculate write t")
+        if you_wants_next_calculate == "n":
+            end = True
+        elif you_wants_next_calculate == "t":
+            end = False
 
-        if działanie == "+":
-            print(liczba_A + liczba_B)
-        elif działanie == "-":
-            print(liczba_A - liczba_B)
-        elif działanie == "*":
-            print(liczba_A*liczba_B)
-        elif działanie == "/":
-            print(liczba_A/liczba_B)
-        elif działanie == "//":
-            print(liczba_A//liczba_B)
-        else:
-            print(liczba_A%liczba_B)
-
-        czy_kolejne = input("Czy chcesz wykonać kolejne działania? t lub n")
-        if czy_kolejne == "n":
-            czy_koniec = True
-        elif czy_kolejne == "t":
-            czy_koniec = False
-        else:
-            print("Nie odpowiedia komenda")
-            break
 
 if __name__ == "__main__":
     main()
-
